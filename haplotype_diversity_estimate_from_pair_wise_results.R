@@ -1,6 +1,5 @@
 ###############################################
-
-# 计算单倍型多样性
+# A new approach for estimating haplotype diversity from mitochondrial DNA 
 ## Code in this file by Ping Fan
 ###############################################
 
