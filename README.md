@@ -1,3 +1,4 @@
 # estimating-haplotype-diversity
-This project described a new approach estimating haplotype diversity.
+# A new approach for estimating haplotype diversity from mitochondrial DNA 
+
 
