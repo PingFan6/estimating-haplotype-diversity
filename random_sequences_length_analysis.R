@@ -1,5 +1,5 @@
 ###############################################
-
+# Codes for the paper:
 # A new approach for estimating haplotype diversity from mitochondrial DNA 
 # Ping Fan, Jon Fjeldså, Xuan Liu, Yafei Dong, Yongbin Chang, Yanhua Qu, Gang Song,Fumin Lei
 #A function to simulate the rangdom intraspecific sequences length and calculate the genetic diversity. The algorithm compares all pairwise combinations of sequences and calculates the proportion of loci that differ between the pair. Returns a DataFrame with the identity of sequences, the lengths of overlap region, the number of degenarate bases(including the missing sites),and the computed pairwise divergence values
