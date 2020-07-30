@@ -259,7 +259,7 @@ run_pairwise_function <- function(fasta_name){
 }
 
 
-# The finally output file of random_pairwise_function are csv file, whose name contain the "_result_i.csv" ,where i is the ith repeat in our simulation.
+# The finally output file of random_pairwise_function are csv file, whose name contain the "fasta_name_i.csv" ,where i is the ith repeat in our simulation.
 
 
 
