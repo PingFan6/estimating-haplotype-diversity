@@ -4,7 +4,7 @@ A new approach for estimating haplotype diversity from mitochondrial DNA
 Ping Fan, Jon Fjeldså, Xuan Liu, Yafei Dong, Yongbin Chang, Yanhua Qu, Gang Song,Fumin Lei
 
 # Description
-A method to calculate the haplotype diversity from pairwise result. Note that all functions provided in "Calculate pairwise function.R" and "haplotype_diversity_estimate_from_pair_wise_results.R" should be loaded before calculation.
+A method to calculate the haplotype diversity from pairwise results. Note that all functions provided in "Calculate pairwise function.R" and "haplotype_diversity_estimate_from_pair_wise_results.R" should be loaded before calculation.
 
 # Data
 The alignment DNA sequences that  stored in FASTA format.
