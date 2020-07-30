@@ -271,7 +271,7 @@ random_pairwise_fun <- function(fasta_name, threshold, repeat_number){
     for (i in 1:repeat_number) {
       
       random_simulate_function(file.names[1],threshold,i)
-      progress_status<-"inner_function is running, now finished data %"
+      progress_status<-"random_simulate_function is running, now running the data repeat"
       progress<-i 
       progress_status<-gsub("data",progress,progress_status)
       print(progress_status)
