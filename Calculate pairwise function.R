@@ -263,7 +263,7 @@ run_pairwise_function <- function(fasta_name){
 
 
 
-random_pairwise_fun <- function(fasta_name, threshold, repeat_number){
+random_pairwise_function <- function(fasta_name, threshold, repeat_number){
   trans_fasta(fasta_name)
   file.names <- dir(pattern="_fa.csv")
   fasta_matrix(file.names[1])
