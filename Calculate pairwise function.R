@@ -165,23 +165,23 @@ pair_function <-function(file_name){
     }
   }
 
-# "random_pair_function" use to simulate the different overlap range/ length with a threshold of 50% and calculate the pairwise results from matrix file 
+# "random_simulate_function" use to simulate the different overlap range/ length with a threshold of 50% and calculate the pairwise results from matrix file 
   
-random_pair_function <-function(file_name,threshold, ith_repeat){
+random_simulate_function <-function(file_name,threshold, ith_repeat){
     
     matrix_con_w <-read.csv(file_name,header = TRUE)
     id_file_name<- gsub("matrix","index",file_name)
     id_file <-read.csv(id_file_name,header = TRUE)
     matrix_con <-matrix_con_w[,-1]
     data_result<- data.frame(seq1_id=NA,seq2_id=NA,iter=NA,sub_iter=NA,sequence_length=NA,pair_dif=NA,dege_base=NA,num_per_dp=NA)
-    #求取序列数目
+
     num_sequence_size <- length(matrix_con$V1)
     if (num_sequence_size <=1){
       data_result_seq1<-data_result
       write.csv(data_result_seq1,file=paste0("seq1","_",file_name,".csv"))}
     else 
     {
-      #设置循环条件为序列数目
+
       id_con <- seq(num_sequence_size)
       iter <- 1
       for (iter in id_con )
@@ -191,25 +191,20 @@ random_pair_function <-function(file_name,threshold, ith_repeat){
         {
           seq1<-matrix_con[iter,]
           seq2<-matrix_con[sub_iter,]
-          #计算序列的原长度，计算的序列没有中断，除非中间由兼并碱基才会出现0值
+
           length_org<-length(seq1)
-          #阈值
-          # threshold<-0.5
-          #设置选取序列长度
-          #设置左边界右边界为原序列长度
+ 
           s_min<-floor(length_org*threshold)
           sequence_length<-floor(runif(1,min = s_min,max = length_org))
-          #设置满足选取长度的起始点
-          #设置起始点右边界
+
           q_max<-length_org-sequence_length + 1
           #
           q_star<-floor(runif(1,min = 1,max = q_max))
           q_fin<-q_star+sequence_length-1
           
-          #统计重叠区域的碱基差异,由于序列长度在比对后都一样长，所以统计两序列都不为0的位点之间的差异就行
-          #统计两两比对序列间的碱基差异pair_dif
+
           pair_dif <- 0
-          #统计重叠区域间的兼并碱基个数在计算时去除dege_base
+
           dege_base<-0
           for (i in q_star:q_fin)
           {
@@ -222,7 +217,7 @@ random_pair_function <-function(file_name,threshold, ith_repeat){
               }
             }
           }
-          #计算配对的核苷酸多样性
+
           num_per_dp <- pair_dif / (sequence_length - dege_base)
           for (k in 1:length(id_file$iter)) {
             if (iter == id_file$iter[k]){seq1_id=id_file$seqid[k]}
@@ -237,15 +232,22 @@ random_pair_function <-function(file_name,threshold, ith_repeat){
         iter <- iter +1
         
       }
-      #去除第一行空值
+ 
       data_result<-data_result[-1,]
       file_name_0<-gsub("_matrix.csv","",file_name)
       
-      file_name_result<-paste0(file_name_0,"_",REP,".csv")
+      file_name_result<-paste0(file_name_0,"_",ith_repeat,".csv")
       write.csv(data_result,file_name_result,row.names = FALSE)
     }
     
   }
+  
+  
+  
+  
+  
+  
+  
   
 # The finally output file of run_pairwise_function is a csv file, whose name contain the "_result" 
 run_pairwise_function <- function(fasta_name){
@@ -268,7 +270,7 @@ random_pairwise_fun <- function(fasta_name, threshold, repeat_number){
   file.names <- dir(pattern="_matrix.csv")
     for (i in 1:repeat_number) {
       
-      random_pair_function(file.names[1],threshold,i)
+      random_simulate_function(file.names[1],threshold,i)
       progress_status<-"inner_function is running, now finished data %"
       progress<-i 
       progress_status<-gsub("data",progress,progress_status)
