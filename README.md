@@ -23,9 +23,12 @@ The out reuslt
 
 
 # 2. random length analysis
- Obtain the simulate pairwise results.Here we set the threshold = 0.5 (50%), repeat number =10
+Obtain the simulate pairwise results.Here we set the threshold = 0.5 (50%), repeat number =10
+
 random_pairwise_function("example_data.fas",0.5,10) 
+
 The output file by "run_pairwise_function" is "example_data_1.csv","example_data_2.csv","example_data_3.csv", ... , "example_data_n.csv", where n is the repeat number
+
 Calculate the genetic dviersity 
 
 
