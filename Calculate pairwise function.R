@@ -13,7 +13,7 @@ library(Biostrings)
 library(stringr)
 
 trans_fasta <- function( fasta_name ){
-  seq <- readLines(file_name) 
+  seq <- readLines(fasta_name) 
   seq <- seq[seq != ""] 
   is.anno <- regexpr("^>", seq, perl=T) 
   seq.anno <- seq[ which(is.anno == 1) ] 
@@ -32,11 +32,10 @@ trans_fasta <- function( fasta_name ){
   seq.ID <- gsub("^>(\\w+\\|){3}([A-Za-z0-9.]+)\\|.*", "\\2", seq.anno, perl = T) 
   result <- data.frame( seq.ID, seq.anno, seq.len, seq.content ) 
   result
-  file_name<-gsub(".fas","_fa.csv",file_name)
+  file_name<-gsub(".fas","_fa.csv",fasta_name)
   write.csv(result,file_name)
   }
 }
-
 #Output a matrix where the rows are aligned genetic sequences, and columns are loci. Basepairs are coded as 1, 2, 3 or 4, or with a 0 signifying that the locus is absent or degenerate base from the alignment. Note: the first column is the sequences order marked as: 1,2,3,..., n, where n is the sample size of that species
 
 fasta_matrix <-function(file_name){
