@@ -8,7 +8,7 @@
 # GD_function is use to calaulate the haplotype diversity and nucleotide diversity from pairwise results. 
 library(dplyr)
 GD_function <- function(PW_result){
-pair_wise_result <- read.data(PW_result,header = TRUE)
+pair_wise_result <- read.csv(PW_result,header = TRUE)
 sel_result <- filter(pair_wise_result,num_per_dp > 0)
 hd <- length(sel_result$num_per_dp)/length(pair_wise_result$num_per_dp)
 pi <- mean(pair_wise_result$num_per_dp)
