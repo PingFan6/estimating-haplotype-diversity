@@ -22,7 +22,7 @@ The out reuslt
 [1] "Haplotype diversity: 0.4 , Nucleotide diversity: 0.000613496932515336"
 
 
-# 2. random length analysis
+# 2. Random length analysis
 Obtain the simulate pairwise results.Here we set the threshold = 0.5 (50%), repeat number =10
 
 random_pairwise_function("example_data.fas",0.5,10) 
