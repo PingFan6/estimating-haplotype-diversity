@@ -18,7 +18,7 @@ Calculate the genetic dviersity
 
 GD_function("example_data_result.csv")
 
-The out reuslt 
+The output reuslt 
 [1] "Haplotype diversity: 0.4 , Nucleotide diversity: 0.000613496932515336"
 
 
