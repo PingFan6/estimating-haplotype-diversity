@@ -1,6 +1,6 @@
 ###############################################
 # Codes for the paper:
-# A new approach for estimating haplotype diversity from mitochondrial DNA 
+# An approach for estimating haplotype diversity from the sequences with unequal lengths
 # Ping Fan, Jon Fjeldså, Xuan Liu, Yafei Dong, Yongbin Chang, Yanhua Qu, Gang Song,Fumin Lei
 #A function to simulate the rangdom intraspecific sequences length and calculate the genetic diversity. The algorithm compares all pairwise combinations of sequences and calculates the proportion of loci that differ between the pair. Returns a DataFrame with the identity of sequences, the lengths of overlap region, the number of degenarate bases(including the missing sites),and the computed pairwise divergence values
 #'seq_file': A matrix where the rows are aligned genetic sequences, and columns are nucleotide sites, the first columns is the id_number of the sequences. Basepairs must be coded as 1, 2, 3 or 4, or with a 0 signifying that the locus is a degenarate base or missing base. The "id_file" is the assession or id of each sequences, first column is the id_number, the second column is the assession number of each sequences.
